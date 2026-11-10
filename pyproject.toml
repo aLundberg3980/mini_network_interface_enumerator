@@ -1,0 +1,14 @@
+[project]
+name = "mini-network-interface-enumerator"
+version = "0.1.0"
+description = "List network interface names, IPv4 addresses, netmasks and flags from Python stdlib."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
