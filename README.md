@@ -47,3 +47,10 @@ disabled interface; check for `None` before formatting.
 Interface names longer than 15 bytes are rejected by the encoder with a
 `ValueError`.  The kernel limit is `IFNAMSIZ - 1`, so this only triggers for
 names the kernel would not accept in the first place.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
